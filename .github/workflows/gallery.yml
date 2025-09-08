@@ -12,6 +12,8 @@ permissions:
   pages: write
 jobs:
   deploy:
+    environment:
+      name: github-pages
     name: Publish Gallery to Github Pages
     if: ${{ github.repository != 'gautamkrishnar/github-pages-gallery' && github.event.head_commit.message != '' && github.event.head_commit.message != 'Initial commit' }}
     runs-on: ubuntu-latest
